@@ -1,0 +1,8 @@
+{
+  "ignore": [
+    "logs.json",
+    "logs.log",
+    "./app/logger/gLog/logs",
+    "./lib/logger/gLog/logs"
+  ]
+}

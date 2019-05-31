@@ -1,0 +1,212 @@
+describe("\n document model fields validation", async () => {
+  it("valid fields", async () => {});
+  it("invalid fields", async () => {});
+  it("other userId refId fields", async () => {});
+  it("deleted refId fields", async () => {});
+  it("empty fields", async () => {});
+  it("missing fields", async () => {});
+});
+
+describe("\n ADMIN only", async () => {
+  const updateUser = data.crud.update.user;
+  it("account permissions not ADMIN", async () => {
+    await updateUser.account.permissions.readWrite(testUserId);
+  });
+  it("account permissions ADMIN", async () => {
+    await updateUser.account.permissions.admin(testUserId);
+  });
+  after(async () => await updateUser.account.permissions.readWrite(testUserId));
+});
+
+describe("\n self only", async () => {
+  it("document from self", async () => {});
+  it("document from other user", async () => {});
+});
+
+describe("\n account status", async () => {
+  const updateUser = data.crud.update.user;
+  describe("\n self", async () => {
+    it("account status is ACTIVE", async () => {
+      await updateUser.account.status.active(testUserId);
+    });
+    it("account status is INACTIVE", async () => {
+      await updateUser.account.status.inactive(testUserId);
+    });
+    it("account status is SUSPENDED", async () => {
+      await updateUser.account.status.suspended(testUserId);
+    });
+    it("account status is BANNED", async () => {
+      await updateUser.account.status.banned(testUserId);
+    });
+    after(async () => await updateUser.account.status.active(testUserId));
+  });
+  describe("\n other user", async () => {
+    it("account status is ACTIVE", async () => {
+      // await updateUser.account.status.active(userId);
+    });
+    it("account status is INACTIVE", async () => {
+      // await updateUser.account.status.inactive(userId);
+    });
+    it("account status is SUSPENDED", async () => {
+      // await updateUser.account.status.suspended(userId);
+    });
+    it("account status is BANNED", async () => {
+      // await updateUser.account.status.banned(userId);
+    });
+    // after(async () => await updateUser.account.status.active(userId));
+  });
+});
+
+describe("\n account permissions", async () => {
+  const updateUser = data.crud.update.user;
+  describe("\n self", async () => {
+    it("account permissions is READ_WRITE", async () => {
+      await updateUser.account.permissions.readWrite(testUserId);
+    });
+    it("account permissions is READ_ONLY", async () => {
+      await updateUser.account.permissions.readOnly(testUserId);
+    });
+    it("account permissions is NONE", async () => {
+      await updateUser.account.permissions.none(testUserId);
+    });
+    it("account permissions is ADMIN", async () => {
+      await updateUser.account.permissions.admin(testUserId);
+    });
+    after(async () => await updateUser.account.permissions.readWrite(testUserId));
+  });
+  describe("\n other user", async () => {
+    it("account permissions is READ_WRITE", async () => {
+      // await updateUser.account.permissions.readWrite(userId);
+    });
+    it("account permissions is READ_ONLY", async () => {
+      // await updateUser.account.permissions.readOnly(userId);
+    });
+    it("account permissions is NONE", async () => {
+      // await updateUser.account.permissions.none(userId);
+    });
+    it("account permissions is ADMIN", async () => {
+      // await updateUser.account.permissions.admin(userId);
+    });
+    // after(async () => await updateUser.account.permissions.readWrite(userId));
+  });
+});
+
+describe("\n many documents", async () => {
+  it("skip and limit", async () => {
+  });
+});
+
+describe("\n empty documents", async () => {
+  it("no documents", async () => {
+  });
+});
+
+describe("\n social connections", async () => {
+  it("private user, following", async () => {
+  });
+  it("public user, following", async () => {
+  });
+  it("private user, following, blocked testUser", async () => {
+  });
+  it("public user, following, blocked testUser", async () => {
+  });
+  it("private user, not following", async () => {
+  });
+  it("public user, not following", async () => {
+  });
+  it("private user, not following, blocked testUser", async () => {
+  });
+  it("public user, not following, blocked testUser", async () => {
+  });
+});
+
+describe("\n nonexistent documents", async () => {
+  it("nonexistent document", async () => {
+  });
+});
+
+describe("\n ref documents", async () => {
+  describe("\n account status", async () => {
+    const updateUser = data.crud.update.user;
+    it("other user account status is ACTIVE", async () => {
+      // await updateUser.account.status.active(userId);
+    });
+    it("other user account status is INACTIVE", async () => {
+      // await updateUser.account.status.inactive(userId);
+    });
+    it("other user account status is SUSPENDED", async () => {
+      // await updateUser.account.status.suspended(userId);
+    });
+    it("other user account status is BANNED", async () => {
+      // await updateUser.account.status.banned(userId);
+    });
+    // after(async () => await updateUser.account.status.active(userId));
+  });
+  describe("\n social connections", async () => {
+    it("private user, following", async () => {
+    });
+    it("public user, following", async () => {
+    });
+    it("private user, following, blocked testUser", async () => {
+    });
+    it("public user, following, blocked testUser", async () => {
+    });
+    it("private user, not following", async () => {
+    });
+    it("public user, not following", async () => {
+    });
+    it("private user, not following, blocked testUser", async () => {
+    });
+    it("public user, not following, blocked testUser", async () => {
+    });
+  });
+  describe("\n nonexistent documents", async () => {
+    it("nonexistent document", async () => {
+    });
+  });
+});
+
+
+
+// ORIGINAL
+
+return {
+  fields: await this.fields(testUserId),
+  selfOnlyDocuments: await this.selfOnlyDocuments(testUserId), // 100
+  adminOnlyDocuments: await this.adminOnlyDocuments(testUserId), // 200
+  manyDocuments: await this.manyDocuments(testUserId), // 300
+  socialConnections: await this.socialConnections(testUserId), // 400
+  refDocuments: await this.refDocuments(testUserId), // 500
+  emptyDocuments: await this.emptyDocuments(testUserId), // 600
+  deletedDocuments: await this.deletedDocuments(testUserId), // 700
+  deletedRefDocuments: await this.deletedRefDocuments(testUserId) // 800
+};
+
+// CHANGED NAMES
+
+return {
+  fields: await this.fields(testUserId),
+  selfOnly: await this.selfOnlyDocuments(testUserId), // 100
+  adminOnly: await this.adminOnlyDocuments(testUserId), // 200
+  many: await this.manyDocuments(testUserId), // 300
+  socialC: await this.socialConnections(testUserId), // 400
+  ref: await this.refDocuments(testUserId), // 500
+  empty: await this.emptyDocuments(testUserId), // 600
+  nonexistent: await this.nonexistentDocuments(testUserId), // 700
+  deletedRefDocuments: await this.deletedRefDocuments(testUserId) // 800
+};
+
+// CHANGED ORDER
+
+return {
+  fields: await this.fields(testUserId),
+  adminOnly: await this.adminOnlyDocuments(testUserId), // 200 (100)
+  selfOnly: await this.selfOnlyDocuments(testUserId), // 100 (200)
+  status: await this.accountStatusDocuments(testUserId), // X00 (300)
+  permissions: await this.accountPermissionsDocuments(testUserId), // X00 (400)
+  many: await this.manyDocuments(testUserId), // 300 (500)
+  empty: await this.emptyDocuments(testUserId), // 600 (600)
+  socialC: await this.socialConnections(testUserId), // 400 (700)
+  nonexistent: await this.nonexistentDocuments(testUserId), // 700 (800)
+  ref: await this.refDocuments(testUserId), // 500 (900)
+};

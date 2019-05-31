@@ -1,0 +1,196 @@
+[
+  {
+    "logGroup": "QUERIES-VERIFY-DOC",
+    "logSubgroup": "GET-USER-ID-CREATOR",
+    "title": "QUERIES-VERIFY-DOC - GET-USER-ID-CREATOR",
+    "message": null,
+    "data": "model",
+    "value": "post",
+    "createdAt": "2018-11-29T08:58:23.769Z"
+  },
+  {
+    "logGroup": "QUERIES-VERIFY-DOC",
+    "logSubgroup": "GET-USER-ID-CREATOR",
+    "title": "QUERIES-VERIFY-DOC - GET-USER-ID-CREATOR",
+    "message": null,
+    "data": "doc",
+    "value": {
+      "_id": "5bffaa281f06495a5a0e8a31",
+      "userId": "5bffaa271f06495a5a0e8a2c",
+      "geometry": {
+        "coordinates": [
+          -13.6412,
+          68.0054
+        ],
+        "_id": "5bffaa281f06495a5a0e8a32",
+        "type": "Point"
+      },
+      "createdAt": "2018-11-29T08:58:16.319Z",
+      "modifiedAt": "2018-11-29T08:58:16.319Z",
+      "__v": 0,
+      "isArchived": false,
+      "comments": [],
+      "commentsEnabled": true,
+      "tags": [],
+      "likes": [],
+      "content": [
+        "http://lorempixel.com/640/480"
+      ],
+      "location": {
+        "lng": -13.6412,
+        "lat": 68.0054
+      }
+    },
+    "createdAt": "2018-11-29T08:58:23.772Z"
+  },
+  {
+    "logGroup": "QUERIES-VERIFY-DOC",
+    "logSubgroup": "GET-USER-ID-CREATOR",
+    "title": "QUERIES-VERIFY-DOC - GET-USER-ID-CREATOR",
+    "message": null,
+    "data": "model",
+    "value": "post",
+    "createdAt": "2018-11-29T08:58:23.778Z"
+  },
+  {
+    "logGroup": "QUERIES-VERIFY-DOC",
+    "logSubgroup": "GET-USER-ID-CREATOR",
+    "title": "QUERIES-VERIFY-DOC - GET-USER-ID-CREATOR",
+    "message": null,
+    "data": "doc",
+    "value": {
+      "_id": "5bffaa281f06495a5a0e8a31",
+      "userId": "5bffaa271f06495a5a0e8a2c",
+      "geometry": {
+        "coordinates": [
+          -13.6412,
+          68.0054
+        ],
+        "_id": "5bffaa281f06495a5a0e8a32",
+        "type": "Point"
+      },
+      "createdAt": "2018-11-29T08:58:16.319Z",
+      "modifiedAt": "2018-11-29T08:58:16.319Z",
+      "__v": 0,
+      "isArchived": false,
+      "comments": [],
+      "commentsEnabled": true,
+      "tags": [],
+      "likes": [],
+      "content": [
+        "http://lorempixel.com/640/480"
+      ],
+      "location": {
+        "lng": -13.6412,
+        "lat": 68.0054
+      }
+    },
+    "createdAt": "2018-11-29T08:58:23.781Z"
+  },
+  {
+    "logGroup": "QUERIES-VERIFY-DOC",
+    "logSubgroup": "GET-USER-ID-CREATOR",
+    "title": "QUERIES-VERIFY-DOC - GET-USER-ID-CREATOR",
+    "message": null,
+    "data": "userIdCreator",
+    "value": "5bffaa271f06495a5a0e8a2c",
+    "createdAt": "2018-11-29T08:58:23.784Z"
+  },
+  {
+    "logGroup": "QUERIES-VERIFY-DOC",
+    "logSubgroup": "GET-USER-ID-CREATOR",
+    "title": "QUERIES-VERIFY-DOC - GET-USER-ID-CREATOR",
+    "message": null,
+    "data": "model",
+    "value": "post",
+    "createdAt": "2018-11-29T08:58:38.178Z"
+  },
+  {
+    "logGroup": "QUERIES-VERIFY-DOC",
+    "logSubgroup": "GET-USER-ID-CREATOR",
+    "title": "QUERIES-VERIFY-DOC - GET-USER-ID-CREATOR",
+    "message": null,
+    "data": "doc",
+    "value": {
+      "_id": "5bffaa281f06495a5a0e8a31",
+      "userId": "5bffaa271f06495a5a0e8a2c",
+      "geometry": {
+        "coordinates": [
+          -13.6412,
+          68.0054
+        ],
+        "_id": "5bffaa281f06495a5a0e8a32",
+        "type": "Point"
+      },
+      "createdAt": "2018-11-29T08:58:16.319Z",
+      "modifiedAt": "2018-11-29T08:58:16.319Z",
+      "__v": 0,
+      "isArchived": false,
+      "comments": [],
+      "commentsEnabled": true,
+      "tags": [],
+      "likes": [],
+      "content": [
+        "http://lorempixel.com/640/480"
+      ],
+      "location": {
+        "lng": -13.6412,
+        "lat": 68.0054
+      }
+    },
+    "createdAt": "2018-11-29T08:58:38.298Z"
+  },
+  {
+    "logGroup": "QUERIES-VERIFY-DOC",
+    "logSubgroup": "GET-USER-ID-CREATOR",
+    "title": "QUERIES-VERIFY-DOC - GET-USER-ID-CREATOR",
+    "message": null,
+    "data": "model",
+    "value": "post",
+    "createdAt": "2018-11-29T08:58:38.512Z"
+  },
+  {
+    "logGroup": "QUERIES-VERIFY-DOC",
+    "logSubgroup": "GET-USER-ID-CREATOR",
+    "title": "QUERIES-VERIFY-DOC - GET-USER-ID-CREATOR",
+    "message": null,
+    "data": "doc",
+    "value": {
+      "_id": "5bffaa281f06495a5a0e8a31",
+      "userId": "5bffaa271f06495a5a0e8a2c",
+      "geometry": {
+        "coordinates": [
+          -13.6412,
+          68.0054
+        ],
+        "_id": "5bffaa281f06495a5a0e8a32",
+        "type": "Point"
+      },
+      "createdAt": "2018-11-29T08:58:16.319Z",
+      "modifiedAt": "2018-11-29T08:58:16.319Z",
+      "__v": 0,
+      "isArchived": false,
+      "comments": [],
+      "commentsEnabled": true,
+      "tags": [],
+      "likes": [],
+      "content": [
+        "http://lorempixel.com/640/480"
+      ],
+      "location": {
+        "lng": -13.6412,
+        "lat": 68.0054
+      }
+    },
+    "createdAt": "2018-11-29T08:58:38.635Z"
+  },
+  {
+    "logGroup": "QUERIES-VERIFY-DOC",
+    "logSubgroup": "GET-USER-ID-CREATOR",
+    "title": "QUERIES-VERIFY-DOC - GET-USER-ID-CREATOR",
+    "message": null,
+    "data": "userIdCreator",
+    "value": "5bffaa271f06495a5a0e8a2c",
+    "createdAt": "2018-11-29T08:58:38.803Z"
+  }
+]

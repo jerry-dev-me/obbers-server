@@ -1,0 +1,110 @@
+[
+  {
+    "logGroup": "QUERIES-VERIFY-USER",
+    "logSubgroup": "IS-SAME-USER",
+    "title": "QUERIES-VERIFY-USER - IS-SAME-USER",
+    "message": null,
+    "data": "user1Id",
+    "value": "5bffaa271f06495a5a0e8a2c",
+    "createdAt": "2018-11-29T08:58:27.241Z"
+  },
+  {
+    "logGroup": "QUERIES-VERIFY-USER",
+    "logSubgroup": "IS-SAME-USER",
+    "title": "QUERIES-VERIFY-USER - IS-SAME-USER",
+    "message": null,
+    "data": "user2Id",
+    "value": "5bffaa271f06495a5a0e8a2c",
+    "createdAt": "2018-11-29T08:58:27.248Z"
+  },
+  {
+    "logGroup": "QUERIES-VERIFY-USER",
+    "logSubgroup": "IS-SAME-USER",
+    "title": "QUERIES-VERIFY-USER - IS-SAME-USER",
+    "message": null,
+    "data": "isSameUser",
+    "value": true,
+    "createdAt": "2018-11-29T08:58:27.329Z"
+  },
+  {
+    "logGroup": "QUERIES-VERIFY-USER",
+    "logSubgroup": "IS-SAME-USER",
+    "title": "QUERIES-VERIFY-USER - IS-SAME-USER",
+    "message": null,
+    "data": "user1Id",
+    "value": "5bffaa271f06495a5a0e8a2c",
+    "createdAt": "2018-11-29T08:58:28.884Z"
+  },
+  {
+    "logGroup": "QUERIES-VERIFY-USER",
+    "logSubgroup": "IS-SAME-USER",
+    "title": "QUERIES-VERIFY-USER - IS-SAME-USER",
+    "message": null,
+    "data": "user2Id",
+    "value": "5bffaa271f06495a5a0e8a2c",
+    "createdAt": "2018-11-29T08:58:29.032Z"
+  },
+  {
+    "logGroup": "QUERIES-VERIFY-USER",
+    "logSubgroup": "IS-SAME-USER",
+    "title": "QUERIES-VERIFY-USER - IS-SAME-USER",
+    "message": null,
+    "data": "isSameUser",
+    "value": true,
+    "createdAt": "2018-11-29T08:58:29.040Z"
+  },
+  {
+    "logGroup": "QUERIES-VERIFY-USER",
+    "logSubgroup": "IS-SAME-USER",
+    "title": "QUERIES-VERIFY-USER - IS-SAME-USER",
+    "message": null,
+    "data": "user1Id",
+    "value": "5bffaa271f06495a5a0e8a2c",
+    "createdAt": "2018-11-29T08:58:35.334Z"
+  },
+  {
+    "logGroup": "QUERIES-VERIFY-USER",
+    "logSubgroup": "IS-SAME-USER",
+    "title": "QUERIES-VERIFY-USER - IS-SAME-USER",
+    "message": null,
+    "data": "user2Id",
+    "value": "5bffaa271f06495a5a0e8a2c",
+    "createdAt": "2018-11-29T08:58:35.446Z"
+  },
+  {
+    "logGroup": "QUERIES-VERIFY-USER",
+    "logSubgroup": "IS-SAME-USER",
+    "title": "QUERIES-VERIFY-USER - IS-SAME-USER",
+    "message": null,
+    "data": "isSameUser",
+    "value": true,
+    "createdAt": "2018-11-29T08:58:35.577Z"
+  },
+  {
+    "logGroup": "QUERIES-VERIFY-USER",
+    "logSubgroup": "IS-SAME-USER",
+    "title": "QUERIES-VERIFY-USER - IS-SAME-USER",
+    "message": null,
+    "data": "user1Id",
+    "value": "5bffaa271f06495a5a0e8a2c",
+    "createdAt": "2018-11-29T08:58:39.040Z"
+  },
+  {
+    "logGroup": "QUERIES-VERIFY-USER",
+    "logSubgroup": "IS-SAME-USER",
+    "title": "QUERIES-VERIFY-USER - IS-SAME-USER",
+    "message": null,
+    "data": "user2Id",
+    "value": "5bffaa271f06495a5a0e8a2c",
+    "createdAt": "2018-11-29T08:58:39.151Z"
+  },
+  {
+    "logGroup": "QUERIES-VERIFY-USER",
+    "logSubgroup": "IS-SAME-USER",
+    "title": "QUERIES-VERIFY-USER - IS-SAME-USER",
+    "message": null,
+    "data": "isSameUser",
+    "value": true,
+    "createdAt": "2018-11-29T08:58:39.267Z"
+  }
+]

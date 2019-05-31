@@ -1,0 +1,15 @@
+module.exports = {
+  connectEmail: require("./functions/connectEmail"),
+  connectProfile: require("./functions/connectProfile"),
+  createNewUserWithEmail: require("./functions/createNewUserWithEmail"),
+  createNewUserWithProfileId: require("./functions/createNewUserWithProfileId"),
+  findByUserId: require("./functions/findByUserId"),
+  findEmail: require("./functions/findEmail"),
+  findProfileId: require("./functions/findProfileId"),
+  getNumOfConnections: require("./functions/getNumOfConnections"),
+  isAuthenticated: require("./functions/isAuthenticated"),
+  isEmailLinkedToOtherUser: require("./functions/isEmailLinkedToOtherUser"),
+  isProfileLinkedToOtherUser: require("./functions/isProfileLinkedToOtherUser"),
+  unlinkEmail: require("./functions/unlinkEmail"),
+  unlinkProfile: require("./functions/unlinkProfile"),
+}

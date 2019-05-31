@@ -1,0 +1,150 @@
+const validatedFields = validateFields.modelName(fields);
+if (validatedFields instanceof Error) return validatedFields;
+
+================================================================================
+// CRUD
+================================================================================
+
+const create-document = await crud.create.document.new(validatedFields);
+
+const read-document = await crud.read.document.find({ prop: value }, {});
+const read-document = await crud.read.document.findAndPopulate({ prop: value }, {}, "prop", "fields, fields");
+const read-document = await crud.read.document.findLeanAndPopulate({ prop: value }, {}, "prop", "fields, fields");
+
+const read-document = await crud.read.document.findOne({ prop: value }, {});
+const read-document = await crud.read.document.findOneAndPopulate({ prop: value }, {}, "prop", "fields, fields");
+const read-document = await crud.read.document.findOneLeanAndPopulate({ prop: value }, {}, "prop", "fields, fields");
+
+const read-document = await crud.read.document.findById({ prop: value }, {});
+const read-document = await crud.read.document.findByIdAndPopulate({ prop: value }, {}, "prop", "fields, fields");
+const read-document = await crud.read.document.findByIdLeanAndPopulate({ prop: value }, {}, "prop", "fields, fields");
+
+const update-document = await crud.update.document.findByIdAndUpdate(id, fieldsAndValues);
+const update-document = await crud.update.document.findByIdAndAddToSet(id, fieldsAndValues);
+const update-document = await crud.update.document.findByIdAndPull(id, fieldsAndValues);
+
+const delete-document = await crud.delete.document.remove(id);
+const delete-document = await crud.delete.document.findByIdAndRemove(id);
+
+================================================================================
+// VERIFY USER
+================================================================================
+
+const canUserReadUser = await canUserReadUser(readerId, idToRead);
+if (variableResults === false) return false;
+
+const getProfileFields = await getProfileFields(readerId, idToRead);
+if (variableResults === false) return false;
+
+const canUserRead = await canUserRead.checkId(userId);
+if (variableResults === false) return false;
+const canUserRead = canUserRead.checkDocument(documentObject);
+if (variableResults === false) return false;
+
+const canUserWrite = await canUserWrite.checkId(userId);
+if (variableResults === false) return false;
+const canUserWrite = canUserWrite.checkDocument(documentObject);
+if (variableResults === false) return false;
+
+const isAccountStatusActive = await isAccount.statusActive.checkId(userId);
+if (variableResults === false) return false;
+const isAccountStatusInactive = await isAccount.statusInactive.checkId(userId);
+if (variableResults === false) return false;
+const isAccountStatusSuspended = await isAccount.statusSuspended.checkId(userId);
+if (variableResults === false) return false;
+const isAccountStatusBanned = await isAccount.statusBanned.checkId(userId);
+if (variableResults === false) return false;
+
+const isAccountStatusActive = isAccount.statusActive.checkDocument(documentObject);
+if (variableResults === false) return false;
+const isAccountStatusInactive = isAccount.statusInactive.checkDocument(documentObject);
+if (variableResults === false) return false;
+const isAccountStatusSuspended = isAccount.statusSuspended.checkDocument(documentObject);
+if (variableResults === false) return false;
+const isAccountStatusBanned = isAccount.statusBanned.checkDocument(documentObject);
+if (variableResults === false) return false;
+
+const isPermissionsReadWrite = await isPermissions.readWrite.checkId(userId);
+if (variableResults === false) return false;
+const isPermissionsReadOnly = await isPermissions.readOnly.checkId(userId);
+if (variableResults === false) return false;
+const isPermissionsAdmin = await isPermissions.admin.checkId(userId);
+if (variableResults === false) return false;
+
+const isPermissionsReadWrite = isPermissions.readWrite.checkDocument(documentObject);
+if (variableResults === false) return false;
+const isPermissionsReadOnly = isPermissions.readOnly.checkDocument(documentObject);
+if (variableResults === false) return false;
+const isPermissionsAdmin = isPermissions.admin.checkDocument(documentObject);
+if (variableResults === false) return false;
+
+const isSameUser = isSameUser(userId, userId);
+if (variableResults === false) return false;
+
+const isSettingsPrivate = await isSettingsPrivate.checkId(userId);
+if (variableResults === false) return false;
+const isSettingsPrivate = isSettingsPrivate.checkDocument(documentObject);
+if (variableResults === false) return false;
+
+const isUserBlocked = await isUserBlocked.checkId(findThisUserId, inThisUserIdBlockedUsers);
+if (variableResults === false) return false;
+const isUserBlocked = isUserBlocked.checkDocument(findThisUserId, inThisDocumentObject);
+if (variableResults === false) return false;
+const isUserBlocked = isUserBlocked.checkArray(findThisUserId, inThisArrayOfBlockedUsers);
+if (variableResults === false) return false;
+
+const isUserFollowing = await isUserFollowing.checkId(findThisUserId, inThisUserIdFollowers);
+if (variableResults === false) return false;
+const isUserFollowing = isUserFollowing.checkDocument(findThisUserId, inThisDocumentObject);
+if (variableResults === false) return false;
+const isUserFollowing = isUserFollowing.checkArray(findThisUserId, inThisArrayOfFollowers);
+if (variableResults === false) return false;
+
+================================================================================
+// VERIFY DOCUMENT
+================================================================================
+
+const exists = await exists.document.checkId(documentId);
+if (variableResults === false) return false;
+const exists = await exists.checkDocument(documentObject);
+if (variableResults === false) return false;
+
+const canUserReadCreator = await canUserReadCreator.document.checkId(userId, documentId);
+if (variableResults === false) return false;
+const canUserReadCreator = await canUserReadCreator.document.checkDocument(userId, documentObject);
+if (variableResults === false) return false;
+
+const getUserIdCreator = await getUserIdCreator.document.checkId(documentId);
+if (variableResults === false) return false;
+const getUserIdCreator = await getUserIdCreator.document.checkDocument(documentObject);
+if (variableResults === false) return false;
+
+const isUserIdCreator = await isUserIdCreator.document.checkId(userId, documentId);
+if (variableResults === false) return false;
+const isUserIdCreator = await isUserIdCreator.document.checkDocument(userId, documentObject);
+if (variableResults === false) return false;
+
+const isUserIdFoundInField = await isUserIdFoundInField.document.checkId(userId, documentId, fieldName);
+if (variableResults === false) return false;
+const isUserIdFoundInField = await isUserIdFoundInField.document.checkDocument(userId, documentObject, fieldName);
+if (variableResults === false) return false;
+
+================================================================================
+
+if (value && value.property.length < 1) return null or emtpy array?
+
+? What does delete.findByIdAndRemove() or delete.remove() returns ???
+
+? if crud query error? return custom error? or mongoose query error?
+
+? how to call the new document created? userDocument? newDocument? newUserDocument?
+
+? use keyword "document" or simply "doc" to save lines?
+
+? do errors go next to the if statements in the same line or do <br> and put em in the next line?
+
+? is it okay to not use braces ?
+
+? updatePost ? no, just call it 'update' , if there are 2 or more, call update1, update2, update3 ?
+
+? tag object, how to create, remove delete, updat??? should we update post parent doc? or tag subdoc directly?

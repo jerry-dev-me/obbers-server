@@ -1,0 +1,35 @@
+module.exports = {
+  create: {
+    new: require("./create/new"),
+  },
+  read: {
+    byId: require("./read/byId"),
+    byName: require("./read/byName"),
+    byUsername: require("./read/byUsername"),
+    profile: require("./read/profile"),
+    archivedPosts: require("./read/archivedPosts"),
+    collections: require("./read/collections"),
+    following: require("./read/following"),
+    followers: require("./read/followers"),
+    requests: require("./read/requests"),
+    blockedUsers: require("./read/blockedUsers"),
+    taggedPosts: require("./read/taggedPosts"),
+    likedPosts: require("./read/likedPosts"),
+  },
+  update: {
+    email: require("./update/email"),
+    password: require("./update/password"),
+    addArchivedPost: require("./update/addArchivedPost"),
+    removeArchivedPost: require("./update/removeArchivedPost"),
+    removeFollowing: require("./update/removeFollowing"),
+    addBlocked: require("./update/addBlocked"),
+    accountStatus: require("./update/accountStatus"),
+    accountPermissions: require("./update/accountPermissions"),
+    settingsPrivate: require("./update/settingsPrivate"),
+    settingsLanguage: require("./update/settingsLanguage"),
+    settingsNotifications: require("./update/settingsNotifications"),
+  },
+  delete: {
+    byId: require("./delete/byId"),
+  },
+}

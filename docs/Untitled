@@ -1,0 +1,171 @@
+TEST DATA
+--------------------------------------------------------------------------------
+
+FIELDS
+- valid
+- invalid
+- otherUserIdRefId
+- deletedRefId
+- emptyValues
+- missingValues
+
+ADMIN ONLY DOCUMENTS (adminOnly) [adminOnly: adminOnlyDocuments] #100
+- single document from private user (read)
+- single documents from private user (update)
+- single documents from private user (delete)
+- multiple documents from private user
+- multiple documents from different private users
+(always return userId and document(s)Id)
+
+SELF ONLY DOCUMENTS (selfOnly) [selfOnly: selfOnlyDocuments] #200
+- single document from testUser (read)
+- single document from testUser (update)
+- single document from testUser (delete)
+- single document from private user
+* single or multiple documents
+(always return userId and document(s)Id)
+
+ACCOUNT STATUS (status) (status.self) (status.user) [status: accountStatusDocuments] #300
+• self
+  - ACTIVE (document from private user following)
+  - INACTIVE (document from private user following)
+  - SUSPENDED (document from private user following)
+  - BANNED (document from private user following)
+• other user
+  - ACTIVE (document from private user following) (document from private user not following)
+  - INACTIVE (document from private user following) (document from private user not following)
+  - SUSPENDED (document from private user following) (document from private user not following)
+  - BANNED (document from private user following) (document from private user not following)
+(always return userId and document(s)Id)
+
+ACCOUNT PERMISSIONS (permissions) (permissions.self) (permissions.user) [permissions: accountPermissionsDocuments] #400
+• self
+  - READ_WRITE: (document from private user following)
+  - READ_ONLY: (document from private user following)
+  - NONE: (document from private user following)
+  - ADMIN: (document from private user following)
+• other user
+  - READ_WRITE (document from private user following) (document from private user not following)
+  - READ_ONLY (document from private user following) (document from private user not following)
+  - NONE (document from private user following) (document from private user not following)
+(always return userId and document(s)Id)
+
+MANY DOCUMENTS (many) [many: manyDocuments] #500
+- user with many documents (document from private user following) (document from private user not following)
+- user with many documents (document from private user following) (document from private user not following)
+- 50 documents, from 1 user (document from private user following) (document from private user not following)
+- 50 documents, from users (document from private users following) (document from private users not following)
+(always return userId and document(s)Id)
+
+EMPTY DOCUMENTS, NULL RETURNS, [] RETURNS (empty) [empty: emptyDocuments] #600
+- user document with no subdocuments
+I.E. (post with 0 comments, user with 0 posts, response with 0 likes, user with no activities)
+(always return userId and document(s)Id)
+
+SOCIAL CONNECTIONS DOCUMENTS (socialC) (connections) #700
+(one document or array of documents per each social connection user)
+- private user, following (document)
+- public user, following (document)
+- private user, following, blocks testUser (document)
+- public user, following, blocks testUser (document)
+- private user, NOT following (document)
+- public user, NOT following (document)
+- private user, NOT following, blocks testUser (document)
+- public user, NOT following, blocks testUser (document)
+(always return userId and document(s)Id)
+
+NONEXISTENT DOCUMENTS (nonexistentDocuments) (deleted) [deleted: deletedDocuments] #800
+- nonexistent user document (create document and then delete)
+- nonexistent model document (create document and then delete)
+- nonexistent multiple documents (create documents and then delete)
+- enter some value that never existed
+(always return userId and document(s)Id)
+
+REF DOCUMENTS (refDocuments) (ref) (ref.socialC) (ref.deleted) [ref: refDocuments] #900
+• ACCOUNT STATUS
+  - ACTIVE (document from private user following) (has userId refId from user with account status)
+  - INACTIVE (document from private user following) (has userId refId from user with account status)
+  - SUSPENDED (document from private user following) (has userId refId from user with account status)
+  - BANNED (document from private user following) (has userId refId from user with account status)
+  (always return userId and document(s)Id)
+• SOCIAL CONNECTIONS
+  - (document from private user following)
+  - has refId to other document, other document belongs to social connection user
+  for each social connection user, create 1 document with refId to other document from social connection user
+  document has refId to other document, other document userId refId belongs to social connection user
+  * return social connection userId and documentId
+  (always return userId and document(s)Id)
+• NONEXISTENT
+  - documents from deleted user
+  has refId to other document, other document userId refId has been deleted
+  - document with refId document deleted (document from private user following)
+  has refId to other document, other document has been deleted
+  (always return userId and document(s)Id)
+--------------------------------------------------------------------------------
+
+TASKS:
+
+- DEFINE TEST NAMES, ORDER, AND DATASETS, DATASET VAR NAMES IN TEST ORDER
+- SEE IF WE CAN CREATE "VALIDATE OPERATION" SYSTEM
+
+return {
+  fields: await this.fields(testUserId),
+  adminOnly: await this.adminOnlyDocuments(testUserId), // 200 (100)
+  selfOnly: await this.selfOnlyDocuments(testUserId), // 100 (200)
+  status: await this.accountStatusDocuments(testUserId), // X00 (300)
+  permissions: await this.accountPermissionsDocuments(testUserId), // X00 (400)
+  many: await this.manyDocuments(testUserId), // 300 (500)
+  empty: await this.emptyDocuments(testUserId), // 600 (600)
+  socialC: await this.socialConnectionsDocuments(testUserId), // 400 (700)
+  nonexistent: await this.nonexistentDocuments(testUserId), // 700 (800)
+  ref: await this.refDocuments(testUserId), // 500 (900)
+};
+
+// OLD OLD OLD OLD OLD OLD OLD OLD OLD OLD OLD OLD OLD OLD OLD OLD OLD OLD OLD
+return {
+  fields: await this.fields(testUserId),
+  selfOnlyDocuments: await this.selfOnlyDocuments(testUserId), // 100
+  adminOnlyDocuments: await this.adminOnlyDocuments(testUserId), // 200
+  manyDocuments: await this.manyDocuments(testUserId), // 300
+  socialConnections: await this.socialConnections(testUserId), // 400
+  refDocuments: await this.refDocuments(testUserId), // 500
+  emptyDocuments: await this.emptyDocuments(testUserId), // 600
+  deletedDocuments: await this.deletedDocuments(testUserId), // 700
+  deletedRefDocuments: await this.deletedRefDocuments(testUserId) // 800
+};
+
+// NEW <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+return {
+  fields: await this.fields(testUserId),
+  adminOnly: await this.adminOnlyDocuments(testUserId), // 100
+  selfOnly: await this.selfOnlyDocuments(testUserId), // 200
+  status: await this.accountStatusDocuments(testUserId), // 300 (self, otherUser)
+  permissions: await this.accountPermissionsDocuments(testUserId), // 400 (self, otherUser)
+  many: await this.manyDocuments(testUserId), // 500
+  empty: await this.emptyDocuments(testUserId), // 600
+  socialC: await this.socialConnectionsDocuments(testUserId), // 700
+  nonexistent: await this.nonexistentDocuments(testUserId), // 800
+  ref: await this.refDocuments(testUserId), // 900 (accountStatus, socialConnections, nonexistent)
+};
+
+DOCUMENTATION
+
+List of CRUD functions
+VerifyDocument - Document Verifications
+VerifyUser - User Verifications
+ValidateFields
+ValidateOperation
+
+List of Models and Restrictions, etc.
+List of Feature Query Functions
+List of types of validations
+
+List of Data Creators
+List of Datasets and data
+List of Tests
+
+Include Usage and Documentation?
+for:
+- ValidateOperation
+- Datasets
+- TestDataCreators

@@ -1,0 +1,342 @@
+// CLEAN VERSION WITH ASSERTS
+
+describe("\n document model fields validation", async () => {
+  it("valid fields", async () => {
+    const newDocument = await featureOperation(argumentz);
+    assert(newDocument);
+    assert(newDocument.userId === d.fields.valid.userId);
+    assert(newDocument.someField === d.fields.valid.someField);
+    assert(newDocument.refModel === d.fields.valid.refModel);
+    assert(newDocument.refId === d.fields.valid.refId);
+    assert(newDocument.createdAt === d.fields.valid.createdAt);
+    assert(newDocument.modifiedAt === d.fields.valid.modifiedAt);
+  });
+  it("invalid fields", async () => {
+    const newDocument = await featureOperation(argumentz);
+    assert(newDocument instanceof Error);
+    assert(newDocument.errors.userId);
+    assert(newDocument.errors.someField);
+    assert(newDocument.errors.refModel);
+    assert(newDocument.errors.refId);
+  });
+  it("other userId refId fields", async () => {
+    const newDocument = await featureOperation(argumentz);
+    assert(newDocument instanceof Error);
+    assert(newDocument.errors.userId);
+    assert(newDocument.errors.someField);
+    assert(newDocument.errors.refModel);
+    assert(newDocument.errors.refId);
+  });
+  it("deleted refId fields", async () => {
+    const newDocument = await featureOperation(argumentz);
+    assert(newDocument instanceof Error);
+    assert(newDocument.errors.userId);
+    assert(newDocument.errors.someField);
+    assert(newDocument.errors.refModel);
+    assert(newDocument.errors.refId);
+  });
+  it("empty fields", async () => {
+    const newDocument = await featureOperation(argumentz);
+    assert(newDocument instanceof Error);
+    assert(newDocument.errors.userId);
+    assert(newDocument.errors.someField);
+    assert(newDocument.errors.refModel);
+    assert(newDocument.errors.refId);
+  });
+  it("missing fields", async () => {
+    const newDocument = await featureOperation(argumentz);
+    assert(newDocument instanceof Error);
+    assert(newDocument.errors.userId);
+    assert(newDocument.errors.someField);
+    assert(newDocument.errors.refModel);
+    assert(newDocument.errors.refId);
+  });
+});
+
+describe("\n ADMIN only", async () => {
+  const updateUser = data.crud.update.user;
+  it("account permissions ADMIN", async () => {
+    await updateUser.account.permissions.admin(testUserId);
+    const featureOperation = await featureOperation(argumentz);
+    assert(featureOperation);
+  });
+  it("account permissions not ADMIN", async () => {
+    await updateUser.account.permissions.readWrite(testUserId);
+    const featureOperation = await featureOperation(argumentz);
+    assert(featureOperation instanceof Error);
+  });
+  after(async () => await updateUser.account.permissions.readWrite(testUserId));
+});
+
+describe("\n self only", async () => {
+  it("document from self", async () => {
+  const featureOperation = await featureOperation(argumentz);
+    assert(featureOperation);
+  });
+  it("document from other user", async () => {
+  const featureOperation = await featureOperation(argumentz);
+    assert(featureOperation instanceof Error);
+  });
+});
+
+describe("\n account status", async () => {
+  const updateUser = data.crud.update.user;
+  describe("\n self", async () => {
+    it("account status is ACTIVE", async () => {
+      await updateUser.account.status.active(testUserId);
+      const featureOperation = await featureOperation(argumentz);
+      assert(featureOperation);
+    });
+    it("account status is INACTIVE", async () => {
+      await updateUser.account.status.inactive(testUserId);
+      const featureOperation = await featureOperation(argumentz);
+      assert(featureOperation);
+      assert(featureOperation instanceof Error);
+    });
+    it("account status is SUSPENDED", async () => {
+      await updateUser.account.status.suspended(testUserId);
+      const featureOperation = await featureOperation(argumentz);
+      assert(featureOperation);
+      assert(featureOperation instanceof Error);
+    });
+    it("account status is BANNED", async () => {
+      await updateUser.account.status.banned(testUserId);
+      const featureOperation = await featureOperation(argumentz);
+      assert(featureOperation);
+      assert(featureOperation instanceof Error);
+    });
+    after(async () => await updateUser.account.status.active(testUserId));
+  });
+  describe("\n other user", async () => {
+    it("account status is ACTIVE", async () => {
+      // await updateUser.account.status.active(userId);
+      const featureOperation = await featureOperation(argumentz);
+      assert(featureOperation);
+      assert(featureOperation instanceof Error);
+    });
+    it("account status is INACTIVE", async () => {
+      // await updateUser.account.status.inactive(userId);
+      const featureOperation = await featureOperation(argumentz);
+      assert(featureOperation);
+      assert(featureOperation instanceof Error);
+    });
+    it("account status is SUSPENDED", async () => {
+      // await updateUser.account.status.suspended(userId);
+      const featureOperation = await featureOperation(argumentz);
+      assert(featureOperation);
+      assert(featureOperation instanceof Error);
+    });
+    it("account status is BANNED", async () => {
+      // await updateUser.account.status.banned(userId);
+      const featureOperation = await featureOperation(argumentz);
+      assert(featureOperation);
+      assert(featureOperation instanceof Error);
+    });
+    // after(async () => await updateUser.account.status.active(userId));
+  });
+});
+
+describe("\n account permissions", async () => {
+  const updateUser = data.crud.update.user;
+  describe("\n self", async () => {
+    it("account permissions is READ_WRITE", async () => {
+      await updateUser.account.permissions.readWrite(testUserId);
+      const featureOperation = await featureOperation(argumentz);
+      assert(featureOperation);
+      assert(featureOperation instanceof Error);
+    });
+    it("account permissions is READ_ONLY", async () => {
+      await updateUser.account.permissions.readOnly(testUserId);
+      const featureOperation = await featureOperation(argumentz);
+      assert(featureOperation);
+      assert(featureOperation instanceof Error);
+    });
+    it("account permissions is NONE", async () => {
+      await updateUser.account.permissions.none(testUserId);
+      const featureOperation = await featureOperation(argumentz);
+      assert(featureOperation);
+      assert(featureOperation instanceof Error);
+    });
+    it("account permissions is ADMIN", async () => {
+      await updateUser.account.permissions.admin(testUserId);
+      const featureOperation = await featureOperation(argumentz);
+      assert(featureOperation);
+      assert(featureOperation instanceof Error);
+    });
+    after(async () => await updateUser.account.permissions.readWrite(testUserId));
+  });
+  describe("\n other user", async () => {
+    it("account permissions is READ_WRITE", async () => {
+      // await updateUser.account.permissions.readWrite(userId);
+      const featureOperation = await featureOperation(argumentz);
+      assert(featureOperation);
+      assert(featureOperation instanceof Error);
+    });
+    it("account permissions is READ_ONLY", async () => {
+      // await updateUser.account.permissions.readOnly(userId);
+      const featureOperation = await featureOperation(argumentz);
+      assert(featureOperation);
+      assert(featureOperation instanceof Error);
+    });
+    it("account permissions is NONE", async () => {
+      // await updateUser.account.permissions.none(userId);
+      const featureOperation = await featureOperation(argumentz);
+      assert(featureOperation);
+      assert(featureOperation instanceof Error);
+    });
+    it("account permissions is ADMIN", async () => {
+      // await updateUser.account.permissions.admin(userId);
+      const featureOperation = await featureOperation(argumentz);
+      assert(featureOperation);
+      assert(featureOperation instanceof Error);
+    });
+    // after(async () => await updateUser.account.permissions.readWrite(userId));
+  });
+});
+
+describe("\n many documents", async () => {
+  it("skip and limit", async () => {
+    const featureOperation = await featureOperation(argumentz);
+    assert(featureOperation);
+    assert(featureOperation instanceof Error);
+  });
+});
+
+describe("\n empty documents", async () => {
+  it("no documents", async () => {
+    const featureOperation = await featureOperation(argumentz);
+    assert(featureOperation);
+    assert(featureOperation instanceof Error);
+  });
+});
+
+describe("\n social connections", async () => {
+  it("private user, following", async () => {
+    const featureOperation = await featureOperation(argumentz);
+    assert(featureOperation);
+    assert(featureOperation instanceof Error);
+  });
+  it("public user, following", async () => {
+    const featureOperation = await featureOperation(argumentz);
+    assert(featureOperation);
+    assert(featureOperation instanceof Error);
+  });
+  it("private user, following, blocked testUser", async () => {
+    const featureOperation = await featureOperation(argumentz);
+    assert(featureOperation);
+    assert(featureOperation instanceof Error);
+  });
+  it("public user, following, blocked testUser", async () => {
+    const featureOperation = await featureOperation(argumentz);
+    assert(featureOperation);
+    assert(featureOperation instanceof Error);
+  });
+  it("private user, not following", async () => {
+    const featureOperation = await featureOperation(argumentz);
+    assert(featureOperation);
+    assert(featureOperation instanceof Error);
+  });
+  it("public user, not following", async () => {
+    const featureOperation = await featureOperation(argumentz);
+    assert(featureOperation);
+    assert(featureOperation instanceof Error);
+  });
+  it("private user, not following, blocked testUser", async () => {
+    const featureOperation = await featureOperation(argumentz);
+    assert(featureOperation);
+    assert(featureOperation instanceof Error);
+  });
+  it("public user, not following, blocked testUser", async () => {
+    const featureOperation = await featureOperation(argumentz);
+    assert(featureOperation);
+    assert(featureOperation instanceof Error);
+  });
+});
+
+describe("\n nonexistent documents", async () => {
+  it("nonexistent document", async () => {
+    const featureOperation = await featureOperation(argumentz);
+    assert(featureOperation);
+    assert(featureOperation instanceof Error);
+  });
+});
+
+describe("\n ref documents", async () => {
+  describe("\n account status", async () => {
+    const updateUser = data.crud.update.user;
+    it("other user account status is ACTIVE", async () => {
+      // await updateUser.account.status.active(userId);
+        const featureOperation = await featureOperation(argumentz);
+      assert(featureOperation);
+      assert(featureOperation instanceof Error);
+    });
+    it("other user account status is INACTIVE", async () => {
+      // await updateUser.account.status.inactive(userId);
+        const featureOperation = await featureOperation(argumentz);
+      assert(featureOperation);
+      assert(featureOperation instanceof Error);
+    });
+    it("other user account status is SUSPENDED", async () => {
+      // await updateUser.account.status.suspended(userId);
+        const featureOperation = await featureOperation(argumentz);
+      assert(featureOperation);
+      assert(featureOperation instanceof Error);
+    });
+    it("other user account status is BANNED", async () => {
+      // await updateUser.account.status.banned(userId);
+        const featureOperation = await featureOperation(argumentz);
+      assert(featureOperation);
+      assert(featureOperation instanceof Error);
+    });
+    // after(async () => await updateUser.account.status.active(userId));
+  });
+  describe("\n social connections", async () => {
+    it("private user, following", async () => {
+      const featureOperation = await featureOperation(argumentz);
+      assert(featureOperation);
+      assert(featureOperation instanceof Error);
+    });
+    it("public user, following", async () => {
+      const featureOperation = await featureOperation(argumentz);
+      assert(featureOperation);
+      assert(featureOperation instanceof Error);
+    });
+    it("private user, following, blocked testUser", async () => {
+      const featureOperation = await featureOperation(argumentz);
+      assert(featureOperation);
+      assert(featureOperation instanceof Error);
+    });
+    it("public user, following, blocked testUser", async () => {
+      const featureOperation = await featureOperation(argumentz);
+      assert(featureOperation);
+      assert(featureOperation instanceof Error);
+    });
+    it("private user, not following", async () => {
+      const featureOperation = await featureOperation(argumentz);
+      assert(featureOperation);
+      assert(featureOperation instanceof Error);
+    });
+    it("public user, not following", async () => {
+      const featureOperation = await featureOperation(argumentz);
+      assert(featureOperation);
+      assert(featureOperation instanceof Error);
+    });
+    it("private user, not following, blocked testUser", async () => {
+      const featureOperation = await featureOperation(argumentz);
+      assert(featureOperation);
+      assert(featureOperation instanceof Error);
+    });
+    it("public user, not following, blocked testUser", async () => {
+      const featureOperation = await featureOperation(argumentz);
+      assert(featureOperation);
+      assert(featureOperation instanceof Error);
+    });
+  });
+  describe("\n nonexistent documents", async () => {
+    it("nonexistent document", async () => {
+      const featureOperation = await featureOperation(argumentz);
+      assert(featureOperation);
+      assert(featureOperation instanceof Error);
+    });
+  });
+});

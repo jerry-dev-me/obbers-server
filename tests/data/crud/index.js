@@ -1,0 +1,28 @@
+module.exports = {
+  create: {
+    activities: require('./create/activities'),
+    archivedPosts: require('./create/archivedPosts'),
+    blockedUsers: require('./create/blockedUsers'),
+    collections: require('./create/collections'),
+    commentLikes: require('./create/commentLikes'),
+    comments: require('./create/comments'),
+    followers: require('./create/followers'),
+    following: require('./create/following'),
+    postLikes: require('./create/postLikes'),
+    posts: require('./create/posts'),
+    reports: require('./create/reports'),
+    requests: require('./create/requests'),
+    responseLikes: require('./create/responseLikes'),
+    responses: require('./create/responses'),
+    taggedPosts: require('./create/taggedPosts'),
+    users: require('./create/users'),
+    usersAccountPermissions: require('./create/usersAccountPermissions'),
+    usersAccountStatus: require('./create/usersAccountStatus'),
+    userSocialConnections: require('./create/userSocialConnections'),
+  },
+  read: {},
+  update: {
+    user: require('./update/user'),
+  },
+  delete: {},
+}

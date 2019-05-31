@@ -1,0 +1,20 @@
+module.exports = {
+  crud: require("./crud"),
+  getTotal: require("./getTotal"),
+  validateFields: require("./validateFields"),
+  validateOperation: require("./validateOperation"),
+  verifyDoc: require("./verifyDoc"),
+  verifyUser: require("./verifyUser"),
+  features: {
+    activity: require("./features/activity"),
+    collection: require("./features/collection"),
+    comment: require("./features/comment"),
+    like: require("./features/like"),
+    post: require("./features/post"),
+    report: require("./features/report"),
+    request: require("./features/request"),
+    response: require("./features/response"),
+    tag: require("./features/tag"),
+    user: require("./features/user"),
+  },
+}

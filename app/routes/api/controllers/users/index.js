@@ -1,0 +1,36 @@
+module.exports = {
+  post: {
+    new: require("./post/new"),
+  },
+  get: {
+    archivedPosts: require("./get/archivedPosts"),
+    blockedUsers: require("./get/blockedUsers"),
+    byId: require("./get/byId"),
+    collections: require("./get/collections"),
+    byName: require("./get/byName"),
+    byUsername: require("./get/byUsername"),
+    followers: require("./get/followers"),
+    following: require("./get/following"),
+    likedPosts: require("./get/likedPosts"),
+    profile: require("./get/profile"),
+    requests: require("./get/requests"),
+    taggedPosts: require("./get/taggedPosts"),
+  },
+  put: {
+    accountPermissions: require("./put/accountPermissions"),
+    accountStatus: require("./put/accountStatus"),
+    addArchivedPost: require("./put/addArchivedPost"),
+    addBlocked: require("./put/addBlocked"),
+    removeBlocked: require("./put/removeBlocked"),
+    email: require("./put/email"),
+    password: require("./put/password"),
+    removeArchivedPost: require("./put/removeArchivedPost"),
+    removeFollowing: require("./put/removeFollowing"),
+    settingsLanguage: require("./put/settingsLanguage"),
+    settingsNotifications: require("./put/settingsNotifications"),
+    settingsPrivate: require("./put/settingsPrivate"),
+  },
+  delete: {
+    byId: require("./delete/byId"),
+  },
+}

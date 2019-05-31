@@ -1,0 +1,31 @@
+[
+  {
+    "logGroup": "QUERIES-VALIDATE-OP",
+    "logSubgroup": "VALIDATE-FIELDS",
+    "title": "QUERIES-VALIDATE-OP - VALIDATE-FIELDS",
+    "message": null,
+    "data": "userId",
+    "value": "5bffaa271f06495a5a0e8a2c",
+    "createdAt": "2018-11-29T08:58:40.294Z"
+  },
+  {
+    "logGroup": "QUERIES-VALIDATE-OP",
+    "logSubgroup": "VALIDATE-FIELDS",
+    "title": "QUERIES-VALIDATE-OP - VALIDATE-FIELDS",
+    "message": null,
+    "data": "model",
+    "value": "post",
+    "createdAt": "2018-11-29T08:58:40.517Z"
+  },
+  {
+    "logGroup": "QUERIES-VALIDATE-OP",
+    "logSubgroup": "VALIDATE-FIELDS",
+    "title": "QUERIES-VALIDATE-OP - VALIDATE-FIELDS",
+    "message": null,
+    "data": "fields",
+    "value": {
+      "caption": "new_caption"
+    },
+    "createdAt": "2018-11-29T08:58:40.744Z"
+  }
+]
